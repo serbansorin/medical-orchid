@@ -35,3 +35,12 @@ Thumbs.db
 *.log
 npm-debug.log
 yarn-error.log
+
+# --- Laravel 13 skeleton extras ---
+/.cursor/
+/.codex
+/.nova
+_ide_helper.php
+Homestead.json
+Homestead.yaml
+/public/fonts-manifest.dev.json
