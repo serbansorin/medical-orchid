@@ -7,13 +7,18 @@
 ## Step 0 — Scaffold & shared DB (prerequisite)
 - [x] Git bootstrap: `git init -b main`, root `.gitignore`, private repo
   `serbansorin/medical-orchid` (commit + push)
-- [ ] `composer create-project laravel/laravel medical-orchid-tmp` (latest), move into
-  `medical-orchid/`, `composer require orchid/platform`
-- [ ] `php artisan orchid:install`, Valet link: `valet link med-orch`, `valet secure med-orch`
-- [ ] `.env`: `DB_DATABASE=medikode_laravel`, same host/user/pass as legacy; verify
-  `php artisan db:show` → 150 tables
-- [ ] Copy `app/Models/*.php` (+ `Enums/`) from `legacy-medical`; tinker smoke per model
-- [ ] Seed roles/permissions; role→dashboard redirect; `AGENTS.md` filled
+- [x] Laravel 13.32 skeleton + `orchid/platform` 14.53; `orchid:install` with shared-DB-guarded
+  migrations (legacy `roles` untouched, `role_users` no-op → `model_has_roles` bridge,
+  `users.permissions` additive, `attachments`/`attachmentable` added)
+- [x] Valet: `link med-orch` + `secure med-orch` → https://med-orch.test (login verified in browser)
+- [x] `.env`: pgsql `medikode_laravel` + APP_URL; migrations additive-only verified (150 → 152 tables)
+- [x] Copied 136 verbatim models + 21 enums from `legacy-medical`; smoke 130/138 clean —
+  8 legacy models target retired tables (FamilyHistory, PatientAllergy, PatientCondition,
+  PatientExamResultFile, PatientTreatment, SurgicalHistory, Vaccination, VitalSign) — resolve at
+  their page steps
+- [x] Roles verified in shared RBAC (super_admin/org_admin/doctor/pharmacist/clinic_receptionist);
+  dev admin `admin@med-orch.test`; `AGENTS.md` updated — role→dashboard redirect moves to Step 1
+  (needs the dashboard routes)
 
 ## Step 1 — Dashboards (3 views, one panel)
 - [ ] Admin dashboard KPIs · `designs/dashboard-admin.md`

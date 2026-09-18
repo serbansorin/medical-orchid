@@ -9,6 +9,18 @@ EMS rebuild: Laravel (latest) + Orchid, sharing PostgreSQL DB `medikode_laravel`
 - Legacy models: `../legacy-medical/app/Models/` (copy, don't rewrite). Legacy DB: same
   credentials as `../legacy-medical/.env` (`DB_DATABASE=medikode_laravel`, main/1234).
 
+## Scaffold facts (Step 0 — live)
+- Stack: Laravel 13.32 + orchid/platform 14.53; Valet `https://med-orch.test` (php@8.5).
+- DB: shared `medikode_laravel` (Postgres, main/1234). `php artisan migrate --pretend` before ANY migrate.
+- RBAC bridge: legacy Spatie tables (`roles`, `permissions`, `role_has_permissions`, `model_has_roles`)
+  back `App\Models\User::roles()/hasAccess()`; `App\Models\Role` maps name→slug. No `role_users` table.
+- Dev super-admin login: `admin@med-orch.test` (role `super_admin`, json `*` grant + legacy pivot).
+- Ported: 136 verbatim models + `User`/`Role` bridges; enums in `app/Enums`. 8 legacy models target
+  retired tables — do NOT use until their page step resolves them: FamilyHistory, PatientAllergy,
+  PatientCondition, PatientExamResultFile, PatientTreatment (`deleted_at` missing), SurgicalHistory,
+  Vaccination, VitalSign.
+- Packages added for verbatim model parity: spatie/laravel-medialibrary ^11.21, spatie/laravel-translatable ^6.11.
+
 ## Rules
 - **Additive-only migrations** — never alter/drop legacy tables. Verify with `migrate --pretend`.
 - **Flat `app/Models/`** — no `Base/` split. Standard Orchid Screens only (Table/Row/Action).

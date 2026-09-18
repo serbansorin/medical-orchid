@@ -1,6 +1,6 @@
 # Medical-Orchid — Master Plan
 
-**Created:** 2026-09-18 · **Status:** 📋 Plan complete + detail enrichment (doctor dashboard widgets, ★ detail overviews) — ready for Step 0 (scaffold)
+**Created:** 2026-09-18 · **Status:** 🚧 Step 0 complete — scaffold live at https://med-orch.test (Laravel 13.32 + Orchid 14.53, shared-DB guarded, RBAC bridged) · next: Step 1 (dashboards)
 **Source:** `legacy-medical` (Laravel 12 + Filament 4, 150 tables, DB `medikode_laravel`)
 **Target:** `medical-orchid` — Laravel (latest) + Orchid, same DB, `https://med-orch.test`
 **Method:** spec-driven (OpenSpec) — this file tracks progress across changes.
@@ -11,7 +11,7 @@
 |---|---|---|
 | ems-orchid-rebuild (proposal/specs/design/tasks) | `openspec/changes/ems-orchid-rebuild/` | ✅ Planned |
 | 24 page designs (details + design each) | `openspec/changes/ems-orchid-rebuild/designs/` | ✅ Planned |
-| Step 0 scaffold | — | ⬜ Next |
+| Step 0 scaffold | — | ✅ Done |
 | Steps 1–7 implementation (one step per menu link) | `tasks.md` | ⬜ Queued |
 
 ## Menu → step → design file index
