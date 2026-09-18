@@ -12,6 +12,7 @@ use Orchid\Filters\Types\Where;
 use Orchid\Filters\Types\WhereDateStartEnd;
 use Orchid\Platform\Models\Role;
 use Orchid\Platform\Models\User as Authenticatable;
+use Orchid\Support\Facades\Dashboard;
 
 class User extends Authenticatable
 {
@@ -44,7 +45,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'permissions'       => 'array',
+        'permissions' => 'array',
         'email_verified_at' => 'datetime',
     ];
 
@@ -54,9 +55,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $allowedFilters = [
-        'id'         => Where::class,
-        'name'       => Like::class,
-        'email'      => Like::class,
+        'id' => Where::class,
+        'name' => Like::class,
+        'email' => Like::class,
         'updated_at' => WhereDateStartEnd::class,
         'created_at' => WhereDateStartEnd::class,
     ];
@@ -94,7 +95,7 @@ class User extends Authenticatable
     public function roles(): MorphToMany
     {
         return $this->morphToMany(
-            \Orchid\Support\Facades\Dashboard::model(Role::class),
+            Dashboard::model(Role::class),
             'model',
             'model_has_roles',
             'model_id',

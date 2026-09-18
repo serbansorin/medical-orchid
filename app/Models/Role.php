@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Orchid\Platform\Models\Role as BaseRole;
 
 /**
@@ -63,11 +65,11 @@ class Role extends BaseRole
     /**
      * Permission names granted to this role (legacy `role_has_permissions`).
      *
-     * @return \Illuminate\Support\Collection<int, string>
+     * @return Collection<int, string>
      */
-    public function permissionNames(): \Illuminate\Support\Collection
+    public function permissionNames(): Collection
     {
-        return \Illuminate\Support\Facades\DB::table('role_has_permissions')
+        return DB::table('role_has_permissions')
             ->join('permissions', 'permissions.id', '=', 'role_has_permissions.permission_id')
             ->where('role_has_permissions.role_id', $this->getKey())
             ->pluck('permissions.name');
