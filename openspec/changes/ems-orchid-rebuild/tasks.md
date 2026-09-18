@@ -5,6 +5,8 @@
 > `https://med-orch.test`. Page details live in `designs/<page>.md`.
 
 ## Step 0 — Scaffold & shared DB (prerequisite)
+- [x] Git bootstrap: `git init -b main`, root `.gitignore`, private repo
+  `serbansorin/medical-orchid` (commit + push)
 - [ ] `composer create-project laravel/laravel medical-orchid-tmp` (latest), move into
   `medical-orchid/`, `composer require orchid/platform`
 - [ ] `php artisan orchid:install`, Valet link: `valet link med-orch`, `valet secure med-orch`
