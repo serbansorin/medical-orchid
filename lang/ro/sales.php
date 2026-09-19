@@ -1,0 +1,35 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'title' => 'Vânzări',
+    'create' => 'Vânzare nouă',
+    'edit' => 'Editează vânzarea',
+    'description' => 'Vânzări OTC și din eliberări.',
+    'number' => 'Număr',
+    'date' => 'Data',
+    'customer' => 'Client',
+    'walk_in' => 'Fără client (la tejghea)',
+    'total' => 'Total',
+    'payment_status' => 'Plată',
+    'lines' => 'Linii',
+    'add_line' => 'Adaugă linie',
+    'remove' => 'Șterge',
+    'item' => 'Medicament',
+    'qty' => 'Cant.',
+    'price' => 'Preț unitar',
+    'discount' => 'Discount %',
+    'subtotal' => 'Subtotal',
+    'notes' => 'Note',
+    'record_payment' => 'Înregistrează plata',
+    'method' => 'Metoda',
+    'amount' => 'Suma',
+    'reference' => 'Referință',
+    'receipts' => 'Bonuri',
+    'payments' => 'Plăți',
+    'saved' => 'Vânzarea a fost salvată.',
+    'paid_ok' => 'Plata a fost înregistrată.',
+    'actions' => 'Acțiuni',
+    'empty' => 'Nicio vânzare.',
+];

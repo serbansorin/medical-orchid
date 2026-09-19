@@ -1,0 +1,35 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'title' => 'Comenzi de achiziție',
+    'create' => 'Comandă nouă',
+    'edit' => 'Editează comanda',
+    'description' => 'Comenzi de achiziție către furnizori.',
+    'number' => 'Număr',
+    'supplier' => 'Furnizor',
+    'order_date' => 'Data comenzii',
+    'expected' => 'Livrare estimată',
+    'status' => 'Status',
+    'total' => 'Total',
+    'pharmacy' => 'Farmacie',
+    'notes' => 'Note',
+    'add_line' => 'Adaugă linie',
+    'remove' => 'Șterge',
+    'medication' => 'Medicament',
+    'qty_ordered' => 'Cant. comandată',
+    'qty_received' => 'Cant. primită',
+    'unit_cost' => 'Cost unitar',
+    'batch' => 'Lot',
+    'expiry' => 'Expirare',
+    'send' => 'Trimite',
+    'receive' => 'Recepționează',
+    'cancel' => 'Anulează',
+    'receive_title' => 'Recepționează comanda',
+    'receive_hint' => 'Gol = recepționează cantitățile comandate integral.',
+    'saved' => 'Comanda a fost salvată.',
+    'received_ok' => 'Comanda a fost recepționată, stocul actualizat.',
+    'actions' => 'Acțiuni',
+    'empty' => 'Nicio comandă de achiziție.',
+];

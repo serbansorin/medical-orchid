@@ -1,0 +1,35 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'title' => 'Purchase orders',
+    'create' => 'New order',
+    'edit' => 'Edit order',
+    'description' => 'Supplier purchase orders.',
+    'number' => 'Number',
+    'supplier' => 'Supplier',
+    'order_date' => 'Order date',
+    'expected' => 'Expected delivery',
+    'status' => 'Status',
+    'total' => 'Total',
+    'pharmacy' => 'Pharmacy',
+    'notes' => 'Notes',
+    'add_line' => 'Add line',
+    'remove' => 'Remove',
+    'medication' => 'Medication',
+    'qty_ordered' => 'Qty ordered',
+    'qty_received' => 'Qty received',
+    'unit_cost' => 'Unit cost',
+    'batch' => 'Batch',
+    'expiry' => 'Expiry',
+    'send' => 'Send',
+    'receive' => 'Receive',
+    'cancel' => 'Cancel',
+    'receive_title' => 'Receive order',
+    'receive_hint' => 'Empty = receive full ordered quantities.',
+    'saved' => 'Order saved.',
+    'received_ok' => 'Order received, stock updated.',
+    'actions' => 'Actions',
+    'empty' => 'No purchase orders.',
+];

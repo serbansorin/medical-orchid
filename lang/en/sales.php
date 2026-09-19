@@ -1,0 +1,35 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'title' => 'Sales',
+    'create' => 'New sale',
+    'edit' => 'Edit sale',
+    'description' => 'OTC and fulfillment sales.',
+    'number' => 'Number',
+    'date' => 'Date',
+    'customer' => 'Customer',
+    'walk_in' => 'Walk-in (no customer)',
+    'total' => 'Total',
+    'payment_status' => 'Payment',
+    'lines' => 'Lines',
+    'add_line' => 'Add line',
+    'remove' => 'Remove',
+    'item' => 'Medication',
+    'qty' => 'Qty',
+    'price' => 'Unit price',
+    'discount' => 'Discount %',
+    'subtotal' => 'Subtotal',
+    'notes' => 'Notes',
+    'record_payment' => 'Record payment',
+    'method' => 'Method',
+    'amount' => 'Amount',
+    'reference' => 'Reference',
+    'receipts' => 'Receipts',
+    'payments' => 'Payments',
+    'saved' => 'Sale saved.',
+    'paid_ok' => 'Payment recorded.',
+    'actions' => 'Actions',
+    'empty' => 'No sales.',
+];
