@@ -1,0 +1,118 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'admin' => [
+        'title' => 'Admin dashboard',
+        'description' => 'Daily operations at a glance',
+        'kpi' => [
+            'patients' => 'Total patients',
+            'todays_appointments' => "Today's appointments",
+            'open_invoices_total' => 'Open invoices total (RON)',
+            'low_stock' => 'Low-stock SKUs',
+            'pending_fulfillments' => 'Prescriptions pending fulfillment',
+            'active_locations' => 'Active clinics & pharmacies',
+        ],
+        'appointments_today' => "Today's appointments",
+        'open_invoices' => 'Open invoices (:count open)',
+        'alerts' => [
+            'low_stock' => ':count SKUs at or below reorder level',
+            'pending_fulfillments' => ':count prescriptions awaiting fulfillment',
+            'all_clear' => 'No stock or fulfillment alerts',
+        ],
+        'table' => [
+            'time' => 'Time',
+            'patient' => 'Patient',
+            'doctor' => 'Doctor',
+            'clinic' => 'Clinic',
+            'type' => 'Type',
+            'status' => 'Status',
+            'invoice_number' => 'Invoice',
+            'invoice_date' => 'Date',
+            'total' => 'Total (RON)',
+            'empty' => 'No records to show',
+        ],
+    ],
+    'doctor' => [
+        'title' => 'Doctor dashboard',
+        'description' => 'Your day at a glance',
+        'now' => [
+            'title' => 'Now',
+            'current' => 'Current',
+            'next' => 'Next',
+            'none' => 'No further appointments today',
+            'time' => 'Time',
+            'patient' => 'Patient',
+            'type' => 'Type',
+            'status' => 'Status',
+        ],
+        'kpi' => [
+            'today_total' => 'Appointments today',
+            'completed' => 'Completed',
+            'remaining' => 'Remaining',
+            'unconfirmed' => 'Unconfirmed',
+            'open_visits' => 'Open visits',
+            'rx_awaiting_signature' => 'Rx awaiting signature',
+        ],
+        'agenda' => [
+            'title' => "Today's agenda",
+            'time' => 'Time',
+            'patient' => 'Patient',
+            'clinic' => 'Clinic',
+            'type' => 'Type',
+            'status' => 'Status',
+            'empty' => 'No appointments today',
+        ],
+        'alerts' => [
+            'title' => 'Alerts',
+            'unconfirmed' => 'Unconfirmed appointments',
+            'unsigned_rx' => 'Unsigned prescriptions',
+            'empty' => 'Nothing needs attention',
+        ],
+        'week' => [
+            'title' => 'This week',
+            'empty' => 'No appointments this week',
+        ],
+        'recent_patients' => [
+            'title' => 'Recent patients',
+            'name' => 'Name',
+            'cnp' => 'CNP',
+            'phone' => 'Phone',
+            'empty' => 'No recent patients',
+        ],
+    ],
+    'pharmacist' => [
+        'title' => 'Pharmacy dashboard',
+        'description' => 'Stock, fulfillment and sales at a glance',
+        'kpi' => [
+            'low_stock' => 'Low-stock SKUs',
+            'pending_fulfillments' => 'Pending fulfillments',
+            'todays_sales' => "Today's sales (RON)",
+            'open_pos' => 'Open purchase orders',
+        ],
+        'queue' => [
+            'title' => 'Fulfillment queue',
+            'prescription' => 'Prescription',
+            'patient' => 'Patient',
+            'status' => 'Status',
+            'updated' => 'Updated',
+            'empty' => 'Queue is empty',
+        ],
+        'low_stock' => [
+            'title' => 'Low stock',
+            'sku' => 'Medication',
+            'on_hand' => 'On hand',
+            'reorder_point' => 'Reorder point',
+            'price' => 'Unit price (RON)',
+            'empty' => 'No low-stock SKUs',
+        ],
+        'sales' => [
+            'title' => "Today's sales",
+            'sale_number' => 'Sale',
+            'total' => 'Total (RON)',
+            'payment' => 'Payment',
+            'empty' => 'No sales today',
+        ],
+    ],
+];

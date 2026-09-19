@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\DashboardController;
+use App\Orchid\Screens\Dashboard\AdminDashboardScreen;
+use App\Orchid\Screens\Dashboard\DoctorDashboardScreen;
+use App\Orchid\Screens\Dashboard\PharmacistDashboardScreen;
 use App\Orchid\Screens\Examples\ExampleActionsScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
@@ -30,6 +34,12 @@ use Tabuna\Breadcrumbs\Trail;
 | contains the need "dashboard" middleware group. Now create something great!
 |
 */
+
+// Dashboards (Step 1: role-based landing)
+Route::screen('/dashboard/admin', AdminDashboardScreen::class)->name('platform.dashboard.admin');
+Route::screen('/dashboard/doctor', DoctorDashboardScreen::class)->name('platform.dashboard.doctor');
+Route::screen('/dashboard/pharmacist', PharmacistDashboardScreen::class)->name('platform.dashboard.pharmacist');
+Route::get('/dashboard', DashboardController::class)->name('platform.dashboard');
 
 // Main
 Route::screen('/main', PlatformScreen::class)

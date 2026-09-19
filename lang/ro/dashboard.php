@@ -1,0 +1,118 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'admin' => [
+        'title' => 'Panou administrare',
+        'description' => 'Operațiunile zilnice dintr-o privire',
+        'kpi' => [
+            'patients' => 'Total pacienți',
+            'todays_appointments' => 'Programări azi',
+            'open_invoices_total' => 'Facturi deschise total (RON)',
+            'low_stock' => 'SKU-uri cu stoc scăzut',
+            'pending_fulfillments' => 'Rețete în așteptare',
+            'active_locations' => 'Clinici și farmacii active',
+        ],
+        'appointments_today' => 'Programările de azi',
+        'open_invoices' => 'Facturi deschise (:count deschise)',
+        'alerts' => [
+            'low_stock' => ':count SKU-uri la sau sub nivelul de reaprovizionare',
+            'pending_fulfillments' => ':count rețete în așteptarea eliberării',
+            'all_clear' => 'Nicio alertă de stoc sau eliberare',
+        ],
+        'table' => [
+            'time' => 'Ora',
+            'patient' => 'Pacient',
+            'doctor' => 'Medic',
+            'clinic' => 'Clinică',
+            'type' => 'Tip',
+            'status' => 'Status',
+            'invoice_number' => 'Factura',
+            'invoice_date' => 'Data',
+            'total' => 'Total (RON)',
+            'empty' => 'Nicio înregistrare de afișat',
+        ],
+    ],
+    'doctor' => [
+        'title' => 'Panou medic',
+        'description' => 'Ziua dumneavoastră dintr-o privire',
+        'now' => [
+            'title' => 'Acum',
+            'current' => 'Curent',
+            'next' => 'Următor',
+            'none' => 'Nicio programare rămasă azi',
+            'time' => 'Ora',
+            'patient' => 'Pacient',
+            'type' => 'Tip',
+            'status' => 'Status',
+        ],
+        'kpi' => [
+            'today_total' => 'Programări azi',
+            'completed' => 'Finalizate',
+            'remaining' => 'Rămase',
+            'unconfirmed' => 'Neconfirmate',
+            'open_visits' => 'Vizite deschise',
+            'rx_awaiting_signature' => 'Rețete de semnat',
+        ],
+        'agenda' => [
+            'title' => 'Agenda de azi',
+            'time' => 'Ora',
+            'patient' => 'Pacient',
+            'clinic' => 'Clinică',
+            'type' => 'Tip',
+            'status' => 'Status',
+            'empty' => 'Nicio programare azi',
+        ],
+        'alerts' => [
+            'title' => 'Alerte',
+            'unconfirmed' => 'Programări neconfirmate',
+            'unsigned_rx' => 'Rețete nesemnate',
+            'empty' => 'Nimic de rezolvat',
+        ],
+        'week' => [
+            'title' => 'Săptămâna aceasta',
+            'empty' => 'Nicio programare săptămâna aceasta',
+        ],
+        'recent_patients' => [
+            'title' => 'Pacienți recenți',
+            'name' => 'Nume',
+            'cnp' => 'CNP',
+            'phone' => 'Telefon',
+            'empty' => 'Niciun pacient recent',
+        ],
+    ],
+    'pharmacist' => [
+        'title' => 'Panou farmacie',
+        'description' => 'Stoc, eliberări și vânzări dintr-o privire',
+        'kpi' => [
+            'low_stock' => 'SKU-uri cu stoc scăzut',
+            'pending_fulfillments' => 'Eliberări în așteptare',
+            'todays_sales' => 'Vânzări azi (RON)',
+            'open_pos' => 'Comenzi de achiziție deschise',
+        ],
+        'queue' => [
+            'title' => 'Coadă eliberări',
+            'prescription' => 'Rețeta',
+            'patient' => 'Pacient',
+            'status' => 'Status',
+            'updated' => 'Actualizat',
+            'empty' => 'Coada este goală',
+        ],
+        'low_stock' => [
+            'title' => 'Stoc scăzut',
+            'sku' => 'Medicament',
+            'on_hand' => 'În stoc',
+            'reorder_point' => 'Prag reaprovizionare',
+            'price' => 'Preț unitar (RON)',
+            'empty' => 'Niciun SKU cu stoc scăzut',
+        ],
+        'sales' => [
+            'title' => 'Vânzările de azi',
+            'sale_number' => 'Vânzarea',
+            'total' => 'Total (RON)',
+            'payment' => 'Plata',
+            'empty' => 'Nicio vânzare azi',
+        ],
+    ],
+];
