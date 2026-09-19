@@ -1,0 +1,53 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'section' => [
+        'organize' => 'Organize',
+        'cabinet' => 'Cabinet',
+        'medical' => 'Medical',
+        'pharmacy' => 'Pharmacy',
+        'billing' => 'Billing',
+    ],
+    'item' => [
+        'dashboard' => 'Dashboard',
+        'organizations' => 'Organizations',
+        'clinics' => 'Clinics',
+        'pharmacies' => 'Pharmacies',
+        'users' => 'Users',
+        'roles' => 'Roles',
+        'specialties' => 'Specialties',
+        'patients' => 'Patients',
+        'appointments' => 'Appointments',
+        'visits' => 'Medical Visits',
+        'schedules' => 'Doctor Schedules',
+        'prescriptions' => 'Prescriptions',
+        'records' => 'Medical Records',
+        'letters' => 'Medical Letters',
+        'diagnostics' => 'Patient Diagnostics',
+        'catalogs' => 'Catalogs',
+        'catalog_conditions' => 'Conditions',
+        'catalog_symptoms' => 'Symptoms',
+        'catalog_treatments' => 'Treatments',
+        'catalog_procedures' => 'Procedures',
+        'catalog_codes' => 'Medical Codes',
+        'questionnaires' => 'Questionnaire Templates',
+        'fulfillment' => 'Fulfillment',
+        'inventory' => 'Inventory',
+        'sales' => 'Sales',
+        'purchase_orders' => 'Purchase Orders',
+        'suppliers' => 'Suppliers',
+        'deliveries' => 'Deliveries',
+        'invoices' => 'Invoices',
+        'payments' => 'Payments',
+        'products' => 'Products & Services',
+        'promotions' => 'Promotions',
+        'loyalty' => 'Loyalty',
+    ],
+    'perm' => [
+        'group' => 'System',
+        'roles' => 'Roles',
+        'users' => 'Users',
+    ],
+];

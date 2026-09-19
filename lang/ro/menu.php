@@ -1,0 +1,53 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'section' => [
+        'organize' => 'Organizare',
+        'cabinet' => 'Cabinet',
+        'medical' => 'Medical',
+        'pharmacy' => 'Farmacie',
+        'billing' => 'Facturare',
+    ],
+    'item' => [
+        'dashboard' => 'Panou de control',
+        'organizations' => 'Organizații',
+        'clinics' => 'Clinici',
+        'pharmacies' => 'Farmacii',
+        'users' => 'Utilizatori',
+        'roles' => 'Roluri',
+        'specialties' => 'Specialități',
+        'patients' => 'Pacienți',
+        'appointments' => 'Programări',
+        'visits' => 'Vizite medicale',
+        'schedules' => 'Programul medicilor',
+        'prescriptions' => 'Rețete',
+        'records' => 'Fișe medicale',
+        'letters' => 'Scrisori medicale',
+        'diagnostics' => 'Diagnostice pacienți',
+        'catalogs' => 'Cataloage',
+        'catalog_conditions' => 'Afecțiuni',
+        'catalog_symptoms' => 'Simptome',
+        'catalog_treatments' => 'Tratamente',
+        'catalog_procedures' => 'Proceduri',
+        'catalog_codes' => 'Coduri medicale',
+        'questionnaires' => 'Șabloane chestionare',
+        'fulfillment' => 'Onorare rețete',
+        'inventory' => 'Stoc',
+        'sales' => 'Vânzări',
+        'purchase_orders' => 'Comenzi de achiziție',
+        'suppliers' => 'Furnizori',
+        'deliveries' => 'Livrări',
+        'invoices' => 'Facturi',
+        'payments' => 'Plăți',
+        'products' => 'Produse și servicii',
+        'promotions' => 'Promoții',
+        'loyalty' => 'Loialitate',
+    ],
+    'perm' => [
+        'group' => 'Sistem',
+        'roles' => 'Roluri',
+        'users' => 'Utilizatori',
+    ],
+];
