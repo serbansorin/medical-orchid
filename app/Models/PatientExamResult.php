@@ -10,9 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Orchid\Screen\AsSource;
 
 class PatientExamResult extends Model implements HasMedia
 {
+    use AsSource;
+
     use HasFactory;
     use InteractsWithMedia;
     use SoftDeletes;

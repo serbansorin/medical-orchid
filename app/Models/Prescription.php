@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Orchid\Screen\AsSource;
 
 class Prescription extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     /** @use HasFactory<\Database\Factories\PrescriptionFactory> */
     use HasFactory;
 

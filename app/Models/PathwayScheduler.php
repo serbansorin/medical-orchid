@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Orchid\Screen\AsSource;
 
 class PathwayScheduler extends Model
 {
+    use AsSource;
+
     protected $fillable = [
         'pathway_id',
         'questionnaire_template_id',

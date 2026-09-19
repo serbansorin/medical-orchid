@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 class PatientCondition extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     protected $fillable = [
         'patient_id',
         'condition_name',

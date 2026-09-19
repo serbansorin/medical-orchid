@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Orchid\Screen\AsSource;
+
 class Session extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     protected $fillable = [
         'user_id',
         'ip_address',

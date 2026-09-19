@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Orchid\Screen\AsSource;
+
 class Notification extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     protected $fillable = [
         'type',
         'notifiable_type',

@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Orchid\Screen\AsSource;
 
 class QuestionnaireResponse extends Model
 {
+    use AsSource;
+
     protected $fillable = [
         'patient_id',
         'questionnaire_template_id',

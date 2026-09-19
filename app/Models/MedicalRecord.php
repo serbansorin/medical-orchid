@@ -8,6 +8,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Screen\AsSource;
 
 /**
  * Class MedicalRecord
@@ -37,6 +38,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class MedicalRecord extends Model
 {
+    use AsSource;
+
     protected $table = 'medical_records';
 
     protected $casts = [

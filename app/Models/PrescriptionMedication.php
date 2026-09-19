@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Orchid\Screen\AsSource;
+
 class PrescriptionMedication extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     protected $fillable = [
         'prescription_id',
         'medication_id',

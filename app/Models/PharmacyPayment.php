@@ -6,6 +6,7 @@ use App\Enums\PaymentMethod;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 /**
  * Class PharmacyPayment
@@ -25,6 +26,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class PharmacyPayment extends Model
 {
+    use AsSource;
+
     use HasFactory;
 
     protected $table = 'pharmacy_payments';

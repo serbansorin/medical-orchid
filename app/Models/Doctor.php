@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOneThrough;
+use Orchid\Screen\AsSource;
 
 class Doctor extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     /** @use HasFactory<\Database\Factories\DoctorFactory> */
     use HasFactory;
 

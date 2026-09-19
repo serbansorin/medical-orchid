@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Orchid\Screen\AsSource;
 
 class ClinicalRecordFile extends Model implements HasMedia
 {
+    use AsSource;
+
     use HasFactory;
     use InteractsWithMedia;
 

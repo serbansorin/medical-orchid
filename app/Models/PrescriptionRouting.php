@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Orchid\Screen\AsSource;
+
 class PrescriptionRouting extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     protected $fillable = [
         'prescription_id',
         'pharmacy_id',

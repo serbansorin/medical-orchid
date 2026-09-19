@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Storage;
+use Orchid\Screen\AsSource;
 
 class BillingInvoice extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     use HasFactory;
 
     public function items()

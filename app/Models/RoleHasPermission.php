@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Orchid\Screen\AsSource;
+
 class RoleHasPermission extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     protected $table = 'role_has_permissions';
 
     public $incrementing = false;

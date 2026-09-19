@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Screen\AsSource;
 
 class Import extends Model
 {
+    use AsSource;
+
     protected $fillable = [
         'file_name',
         'file_path',

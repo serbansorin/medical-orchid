@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Orchid\Screen\AsSource;
 
 class MedicalVisit extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     use HasFactory;
 
     protected $table = 'medical_visits';

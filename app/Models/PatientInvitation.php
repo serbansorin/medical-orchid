@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
+use Orchid\Screen\AsSource;
 
 class PatientInvitation extends Model
 {
+    use AsSource;
+
     /** @use HasFactory<\Database\Factories\PatientInvitationFactory> */
     use HasFactory;
 

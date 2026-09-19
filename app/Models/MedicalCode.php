@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Orchid\Screen\AsSource;
 
 class MedicalCode extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     // =========================================================================
     // RELATIONSHIPS
     // =========================================================================

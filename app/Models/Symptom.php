@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Orchid\Screen\AsSource;
 
 class Symptom extends Model
 {
+    use AsSource;
+
     protected $fillable = ['name', 'slug', 'category', 'severity_scale', 'is_common', 'meta'];
 
     protected $casts = [

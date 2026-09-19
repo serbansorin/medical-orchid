@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\Storage;
+use Orchid\Screen\AsSource;
 
 class InternalMessageAttachment extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     protected $fillable = [
         'message_id',
         'filename',

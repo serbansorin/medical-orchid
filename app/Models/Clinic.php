@@ -6,9 +6,12 @@ use App\Services\ClinicCodeGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Str;
+use Orchid\Screen\AsSource;
 
 class Clinic extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     public const SLUG_MAX_LENGTH = 48;
 
     /** @use HasFactory<\Database\Factories\ClinicFactory> */

@@ -9,6 +9,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Orchid\Screen\AsSource;
 
 /**
  * Class TreatmentPlan
@@ -45,6 +46,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class TreatmentPlan extends Model
 {
+    use AsSource;
+
     use SoftDeletes;
 
     protected $table = 'treatment_plans';

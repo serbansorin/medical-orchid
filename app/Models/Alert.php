@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 class Alert extends Model
 {
+    use AsSource;
+
     protected $fillable = [
         'alert_rule_id',
         'patient_id',

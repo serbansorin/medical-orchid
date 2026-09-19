@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 class DoctorSchedule extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     /** @use HasFactory<\Database\Factories\DoctorScheduleFactory> */
     use HasFactory;
 

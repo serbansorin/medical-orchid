@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Orchid\Screen\AsSource;
 
 class MedicalLetter extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     use SoftDeletes;
 
     protected $fillable = [

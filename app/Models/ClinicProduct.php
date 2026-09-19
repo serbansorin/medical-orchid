@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 /**
  * Clinic-level product override (price, duration, availability).
@@ -18,6 +19,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class ClinicProduct extends Model
 {
+    use AsSource;
+
     protected $table = 'clinic_product';
 
     protected $fillable = [

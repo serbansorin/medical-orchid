@@ -4,9 +4,12 @@ namespace App\Models;
 
 use App\Enums\AllergySeverity;
 use App\Enums\AllergyType;
+use Orchid\Screen\AsSource;
 
 class PatientAllergy extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     protected $fillable = [
         'patient_id',
         'allergen_name',

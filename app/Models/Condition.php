@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Orchid\Screen\AsSource;
 
 class Condition extends Model
 {
+    use AsSource;
+
     protected $fillable = ['name', 'slug', 'category', 'description', 'icd_code', 'meta'];
 
     protected $casts = [

@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
+use Orchid\Screen\AsSource;
 
 class UserWorkplace extends MorphPivot
 {
+    use AsSource;
+
     protected $table = 'user_workplaces';
 
     public $incrementing = true;

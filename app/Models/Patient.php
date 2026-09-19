@@ -8,9 +8,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Orchid\Screen\AsSource;
 
 class Patient extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     /** @use HasFactory<\Database\Factories\PatientFactory> */
     use HasFactory;
 

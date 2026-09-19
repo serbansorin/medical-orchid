@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 class CalendarEvent extends Model
 {
+    use AsSource;
+
     protected $fillable = [
         'clinic_id',
         'doctor_id',

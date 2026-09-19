@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Orchid\Screen\AsSource;
 
 /**
  * Class PharmacyCustomerProfile
@@ -32,6 +33,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  */
 class PharmacyCustomerProfile extends Model
 {
+    use AsSource;
+
     use HasFactory;
 
     protected $table = 'pharmacy_customer_profiles';

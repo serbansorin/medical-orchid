@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Orchid\Screen\AsSource;
 
 class Procedure extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     // =========================================================================
     // BOOT
     // =========================================================================

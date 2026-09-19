@@ -6,6 +6,7 @@ use App\Enums\DrugInteractionSeverity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Orchid\Screen\AsSource;
 
 /**
  * Class DrugInteraction
@@ -28,6 +29,8 @@ use Illuminate\Support\Collection;
  */
 class DrugInteraction extends Model
 {
+    use AsSource;
+
     use HasFactory;
 
     protected $table = 'drug_interactions';

@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 class VisitServiceLine extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     use HasFactory;
 
     protected $table = 'visit_service_lines';

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 /**
  * Doctor-level product override (price, duration, availability).
@@ -19,6 +20,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class DoctorProduct extends Model
 {
+    use AsSource;
+
     protected $table = 'doctor_product';
 
     protected $fillable = [

@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Screen\AsSource;
 
 class PatientDocument extends Model
 {
+    use AsSource;
+
     protected $fillable = [
         'patient_id',
         'uploaded_by',

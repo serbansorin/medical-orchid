@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Orchid\Screen\AsSource;
 
 class PharmacyInventory extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     use HasFactory;
 
     protected $table = 'pharmacy_inventory';

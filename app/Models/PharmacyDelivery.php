@@ -6,6 +6,7 @@ use App\Enums\DeliveryStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Orchid\Screen\AsSource;
 
 /**
  * Class PharmacyDelivery
@@ -35,6 +36,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class PharmacyDelivery extends Model
 {
+    use AsSource;
+
     use HasFactory;
 
     protected $table = 'pharmacy_deliveries';

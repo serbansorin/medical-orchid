@@ -8,6 +8,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Screen\AsSource;
 
 /**
  * Class VitalSign
@@ -50,6 +51,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class VitalSign extends Model
 {
+    use AsSource;
+
     protected $table = 'vital_signs';
 
     protected $casts = [

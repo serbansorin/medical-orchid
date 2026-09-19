@@ -9,9 +9,12 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Orchid\Screen\AsSource;
 
 class MedicalHistory extends Model implements HasMedia
 {
+    use AsSource;
+
     use HasFactory, InteractsWithMedia, SoftDeletes;
 
     protected $fillable = [

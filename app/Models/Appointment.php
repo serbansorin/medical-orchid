@@ -6,9 +6,12 @@ use App\Services\Catalog\CatalogPricingService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Orchid\Screen\AsSource;
 
 class Appointment extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     /** @use HasFactory<\Database\Factories\AppointmentFactory> */
     use HasFactory;
 

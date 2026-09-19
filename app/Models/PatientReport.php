@@ -16,9 +16,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use InvalidArgumentException;
 use JsonException;
 use RuntimeException;
+use Orchid\Screen\AsSource;
 
 class PatientReport extends Model
 {
+    use AsSource;
+
     use HasFactory, SoftDeletes;
 
     protected $fillable = [

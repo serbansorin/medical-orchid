@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Spatie\Translatable\HasTranslations;
+use Orchid\Screen\AsSource;
 
 class Specialty extends \Illuminate\Database\Eloquent\Model
 {
+    use AsSource;
+
     use HasTranslations;
 
     public $translatable = ['name', 'description'];
