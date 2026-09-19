@@ -1,0 +1,57 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'promotions' => [
+        'title' => 'Promoții',
+        'description' => 'Campanii de discount (doar citire în v1)',
+        'create' => 'Promoție nouă',
+        'name' => 'Titlu',
+        'discount' => 'Discount',
+        'validity' => 'Valabilitate',
+        'active' => 'Activă',
+        'used' => 'Utilizări',
+        'empty' => 'Nicio promoție găsită',
+    ],
+    'promotion_form' => [
+        'create_title' => 'Promoție nouă',
+        'edit_title' => 'Editează :name',
+        'pharmacy' => 'Farmacia (opțional)',
+        'title' => 'Titlu',
+        'description' => 'Descriere',
+        'discount_type' => 'Tip discount',
+        'discount_value' => 'Valoare discount',
+        'min_purchase' => 'Sumă minimă de cumpărare',
+        'starts_at' => 'Începe la',
+        'ends_at' => 'Se termină la',
+        'usage_limit' => 'Limită utilizări',
+        'active' => 'Activă',
+        'save' => 'Salvează promoția',
+        'saved' => 'Promoția a fost salvată.',
+    ],
+    'programs' => [
+        'title' => 'Programe de loialitate',
+        'description' => 'Reguli de acumulare/răscumpărare și pacienți înscriși (doar citire în v1)',
+        'name' => 'Denumire',
+        'earn_rule' => 'Regulă acumulare',
+        'enrolled' => 'Înscriși',
+        'active' => 'Activ',
+        'empty' => 'Niciun program de loialitate găsit',
+    ],
+    'points' => [
+        'title' => 'Registru puncte de loialitate',
+        'description' => 'Solduri doar în citire; ajustările sunt doar pentru org-admin',
+        'patient' => 'Pacient',
+        'program' => 'Program',
+        'balance' => 'Sold',
+        'earned' => 'Acumulat total',
+        'redeemed' => 'Răscumpărat',
+        'tier' => 'Nivel',
+        'empty' => 'Niciun sold de loialitate găsit',
+        'adjust' => 'Ajustează soldul',
+        'adjusted' => 'Soldul a fost ajustat.',
+        'delta' => 'Delta (+/- puncte)',
+        'reason' => 'Motiv (obligatoriu)',
+    ],
+];

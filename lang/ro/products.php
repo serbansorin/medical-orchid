@@ -1,0 +1,63 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'list' => [
+        'title' => 'Produse & Servicii',
+        'description' => 'Catalog la nivel de organizație, clinică și doctor',
+        'create' => 'Produs nou',
+        'name' => 'Denumire',
+        'code' => 'Cod',
+        'level' => 'Nivel',
+        'price' => 'Preț de bază',
+        'effective_price' => 'Preț efectiv',
+        'duration' => 'Durata (min)',
+        'active' => 'Activ',
+        'empty' => 'Niciun produs găsit',
+    ],
+    'level' => [
+        'organization' => 'Organizație',
+        'clinic' => 'Clinică',
+        'doctor' => 'Doctor',
+        'own' => 'Propriu',
+        'cloned' => 'Clonat',
+    ],
+    'type' => [
+        'service' => 'Serviciu',
+        'physical' => 'Fizic',
+    ],
+    'filter' => [
+        'title' => 'Filtre',
+        'type' => 'Tip',
+        'active' => 'Doar active',
+        'search' => 'Denumire, cod sau SKU',
+        'apply' => 'Aplică',
+        'reset' => 'Resetează',
+        'all' => 'Toate',
+    ],
+    'form' => [
+        'create_title' => 'Produs nou',
+        'edit_title' => 'Editează :name',
+        'owner_level' => 'Nivel proprietar',
+        'organization' => 'Organizația',
+        'clinic' => 'Clinica',
+        'doctor' => 'Doctorul',
+        'name' => 'Denumire',
+        'code' => 'Cod produs',
+        'sku' => 'SKU',
+        'category' => 'Categorie',
+        'type' => 'Tip',
+        'price' => 'Preț de bază',
+        'duration' => 'Durata (minute, servicii)',
+        'stock' => 'Stoc (produse fizice)',
+        'active' => 'Activ',
+        'requires_payment' => 'Necesită plată',
+        'requires_prescription' => 'Necesită rețetă',
+        'description' => 'Descriere',
+        'save' => 'Salvează produsul',
+        'saved' => 'Produsul a fost salvat.',
+        'inheritance' => 'Moștenire',
+        'effective' => 'Preț efectiv în context (se aplică suprascrierile de clinică/doctor)',
+    ],
+];

@@ -1,0 +1,63 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'list' => [
+        'title' => 'Products & Services',
+        'description' => 'Catalog at organization, clinic and doctor level',
+        'create' => 'New product',
+        'name' => 'Name',
+        'code' => 'Code',
+        'level' => 'Level',
+        'price' => 'Base price',
+        'effective_price' => 'Effective price',
+        'duration' => 'Duration (min)',
+        'active' => 'Active',
+        'empty' => 'No products found',
+    ],
+    'level' => [
+        'organization' => 'Organization',
+        'clinic' => 'Clinic',
+        'doctor' => 'Doctor',
+        'own' => 'Own',
+        'cloned' => 'Cloned',
+    ],
+    'type' => [
+        'service' => 'Service',
+        'physical' => 'Physical',
+    ],
+    'filter' => [
+        'title' => 'Filters',
+        'type' => 'Type',
+        'active' => 'Active only',
+        'search' => 'Name, code or SKU',
+        'apply' => 'Apply',
+        'reset' => 'Reset',
+        'all' => 'All',
+    ],
+    'form' => [
+        'create_title' => 'New product',
+        'edit_title' => 'Edit :name',
+        'owner_level' => 'Owner level',
+        'organization' => 'Organization',
+        'clinic' => 'Clinic',
+        'doctor' => 'Doctor',
+        'name' => 'Name',
+        'code' => 'Product code',
+        'sku' => 'SKU',
+        'category' => 'Category',
+        'type' => 'Type',
+        'price' => 'Base price',
+        'duration' => 'Duration (minutes, services)',
+        'stock' => 'Stock quantity (physical)',
+        'active' => 'Active',
+        'requires_payment' => 'Requires payment',
+        'requires_prescription' => 'Requires prescription',
+        'description' => 'Description',
+        'save' => 'Save product',
+        'saved' => 'Product saved.',
+        'inheritance' => 'Inheritance',
+        'effective' => 'Effective price in context (clinic/doctor overrides apply)',
+    ],
+];

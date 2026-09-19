@@ -1,0 +1,57 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'promotions' => [
+        'title' => 'Promotions',
+        'description' => 'Discount campaigns (read-mostly in v1)',
+        'create' => 'New promotion',
+        'name' => 'Title',
+        'discount' => 'Discount',
+        'validity' => 'Validity',
+        'active' => 'Active',
+        'used' => 'Used',
+        'empty' => 'No promotions found',
+    ],
+    'promotion_form' => [
+        'create_title' => 'New promotion',
+        'edit_title' => 'Edit :name',
+        'pharmacy' => 'Pharmacy (optional)',
+        'title' => 'Title',
+        'description' => 'Description',
+        'discount_type' => 'Discount type',
+        'discount_value' => 'Discount value',
+        'min_purchase' => 'Minimum purchase amount',
+        'starts_at' => 'Starts at',
+        'ends_at' => 'Ends at',
+        'usage_limit' => 'Usage limit',
+        'active' => 'Active',
+        'save' => 'Save promotion',
+        'saved' => 'Promotion saved.',
+    ],
+    'programs' => [
+        'title' => 'Loyalty programs',
+        'description' => 'Earn/burn rules and enrolled patients (read-mostly in v1)',
+        'name' => 'Name',
+        'earn_rule' => 'Earn rule',
+        'enrolled' => 'Enrolled',
+        'active' => 'Active',
+        'empty' => 'No loyalty programs found',
+    ],
+    'points' => [
+        'title' => 'Loyalty points ledger',
+        'description' => 'Read-only balances; adjustments are org-admin only',
+        'patient' => 'Patient',
+        'program' => 'Program',
+        'balance' => 'Balance',
+        'earned' => 'Lifetime earned',
+        'redeemed' => 'Redeemed',
+        'tier' => 'Tier',
+        'empty' => 'No loyalty balances found',
+        'adjust' => 'Adjust balance',
+        'adjusted' => 'Balance adjusted.',
+        'delta' => 'Delta (+/- points)',
+        'reason' => 'Reason (required)',
+    ],
+];
