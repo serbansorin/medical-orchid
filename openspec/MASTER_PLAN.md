@@ -1,6 +1,6 @@
 # Medical-Orchid — Master Plan
 
-**Created:** 2026-09-18 · **Status:** 🚧 Steps 0–1 complete (scaffold + 3 dashboards + role redirect live at https://med-orch.test) · Steps 2–6 building in parallel
+**Created:** 2026-09-18 · **Status:** 🚀 Steps 0–6 complete — full EMS surface live at https://med-orch.test (65 screens, 6 role-gated sections, zero 500s on 83-route smoke) · next: scoping pass (FR-4) + Step 7 (Sistem) · Step 4 screens implemented 2026-09-19 (Prescriptions, Records, Letters+Templates, Diagnostics, 5 Catalogs, Questionnaires — route registration pending)
 **Source:** `legacy-medical` (Laravel 12 + Filament 4, 150 tables, DB `medikode_laravel`)
 **Target:** `medical-orchid` — Laravel (latest) + Orchid, same DB, `https://med-orch.test`
 **Method:** spec-driven (OpenSpec) — this file tracks progress across changes.
@@ -12,7 +12,9 @@
 | ems-orchid-rebuild (proposal/specs/design/tasks) | `openspec/changes/ems-orchid-rebuild/` | ✅ Planned |
 | 24 page designs (details + design each) | `openspec/changes/ems-orchid-rebuild/designs/` | ✅ Planned |
 | Step 0 scaffold | — | ✅ Done |
-| Steps 1–7 implementation (one step per menu link) | `tasks.md` | ⬜ Queued |
+| Steps 1–6 implementation (one step per menu link) | `tasks.md` | ✅ Done (65 screens live) |
+| Scoping pass (FR-4) + model field-drift pass | `tasks.md` notes | ⬜ Follow-up |
+| Step 7 (Sistem: menus mirror, imports, articles + cutover) | `tasks.md` | ⬜ Queued |
 
 ## Menu → step → design file index
 

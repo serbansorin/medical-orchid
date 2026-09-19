@@ -20,6 +20,11 @@ EMS rebuild: Laravel (latest) + Orchid, sharing PostgreSQL DB `medikode_laravel`
   PatientCondition, PatientExamResultFile, PatientTreatment (`deleted_at` missing), SurgicalHistory,
   Vaccination, VitalSign.
 - Packages added for verbatim model parity: spatie/laravel-medialibrary ^11.21, spatie/laravel-translatable ^6.11.
+- Orchid interop: all ported models use `Orchid\Screen\AsSource` (needed by `usingComponent()` cells);
+  `resources/views/vendor/platform/layouts/{base,block}.blade.php` override vendor double-translation
+  (`__($name)`) that breaks on macOS case-insensitive FS — keep these when upgrading Orchid.
+- Recipes: dashboards/tile data via `app/Services/Dashboard`; visit start + dispense/receive flows are
+  transactional services (`Visits/VisitService`, `Pharmacy/FulfillmentService`, `Pharmacy/PurchaseOrderService`).
 
 ## Rules
 - **Additive-only migrations** — never alter/drop legacy tables. Verify with `migrate --pretend`.
