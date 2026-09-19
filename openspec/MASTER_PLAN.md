@@ -1,6 +1,6 @@
 # Medical-Orchid — Master Plan
 
-**Created:** 2026-09-18 · **Status:** 🚧 Step 0 complete — scaffold live at https://med-orch.test (Laravel 13.32 + Orchid 14.53, shared-DB guarded, RBAC bridged) · next: Step 1 (dashboards)
+**Created:** 2026-09-18 · **Status:** 🚧 Steps 0–1 complete (scaffold + 3 dashboards + role redirect live at https://med-orch.test) · Steps 2–6 building in parallel
 **Source:** `legacy-medical` (Laravel 12 + Filament 4, 150 tables, DB `medikode_laravel`)
 **Target:** `medical-orchid` — Laravel (latest) + Orchid, same DB, `https://med-orch.test`
 **Method:** spec-driven (OpenSpec) — this file tracks progress across changes.

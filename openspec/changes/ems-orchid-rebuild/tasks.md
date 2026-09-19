@@ -21,9 +21,10 @@
   (needs the dashboard routes)
 
 ## Step 1 — Dashboards (3 views, one panel)
-- [ ] Admin dashboard KPIs · `designs/dashboard-admin.md`
-- [ ] Doctor dashboard (agenda/open visits/Rx to sign) · `designs/dashboard-doctor.md`
-- [ ] Pharmacist dashboard (low stock/fulfillment/sales) · `designs/dashboard-pharmacist.md`
+- [x] Admin dashboard KPIs · `designs/dashboard-admin.md`
+- [x] Doctor dashboard (agenda/open visits/Rx to sign) · `designs/dashboard-doctor.md`
+- [x] Pharmacist dashboard (low stock/fulfillment/sales) · `designs/dashboard-pharmacist.md`
+- [x] Role→dashboard redirect (`platform.dashboard` → admin/doctor/pharmacist by role) — deferred item from Step 0
 
 ## Step 2 — Organizare
 - [ ] Organizations · `designs/organization.md`
