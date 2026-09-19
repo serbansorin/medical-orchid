@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace App\Orchid\Screens\Role;
 
+use App\Models\Role;
+use App\Models\RoleHasPermission;
 use App\Orchid\Layouts\Role\RoleListLayout;
-use Orchid\Platform\Models\Role;
 use Orchid\Screen\Action;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layout;
@@ -16,12 +17,25 @@ class RoleListScreen extends Screen
     /**
      * Fetch data to be displayed on the screen.
      *
+     * The legacy `roles` table has no slug/permissions columns, so the base
+     * Filterable map is bypassed: the name search is applied manually.
+     *
      * @return array
      */
     public function query(): iterable
     {
+        $filter = (array) request()->get('filter', []);
+
         return [
-            'roles' => Role::filters()->defaultSort('id', 'desc')->paginate(),
+            'roles' => Role::withCount(['users'])
+                ->select('roles.*')
+                ->selectSub(
+                    RoleHasPermission::selectRaw('count(*)')->whereColumn('role_id', 'roles.id'),
+                    'permissions_count'
+                )
+                ->when(isset($filter['name']) && $filter['name'] !== '', fn ($q) => $q->where('name', 'ilike', '%'.$filter['name'].'%'))
+                ->orderByDesc('id')
+                ->paginate(25),
         ];
     }
 
@@ -30,7 +44,7 @@ class RoleListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Role Management';
+        return __('roles.list_title');
     }
 
     /**
@@ -38,13 +52,15 @@ class RoleListScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'A comprehensive list of all roles, including their permissions and associated users.';
+        return __('roles.list_description');
     }
 
     public function permission(): ?iterable
     {
+        // 'platform.systems.roles' matches nothing in the shared legacy
+        // permissions table, so the legacy panel gate is used instead.
         return [
-            'platform.systems.roles',
+            'access_admin_panel',
         ];
     }
 

@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace App\Orchid\Screens\Role;
 
+use App\Models\Role;
 use App\Orchid\Layouts\Role\RoleEditLayout;
-use App\Orchid\Layouts\Role\RolePermissionLayout;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Orchid\Platform\Models\Role;
 use Orchid\Screen\Action;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Fields\Label;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
@@ -31,8 +31,9 @@ class RoleEditScreen extends Screen
     public function query(Role $role): iterable
     {
         return [
-            'role'       => $role,
-            'permission' => $role->statusOfPermissions(),
+            'role' => $role,
+            // Read-only grant list from the legacy pivot (owned by legacy app).
+            'rolePermissions' => $role->exists ? $role->permissionNames()->all() : [],
         ];
     }
 
@@ -41,7 +42,7 @@ class RoleEditScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Edit Role';
+        return $this->role->exists ? __('roles.edit_title') : __('roles.create_title');
     }
 
     /**
@@ -49,7 +50,7 @@ class RoleEditScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'Modify the privileges and permissions associated with a specific role.';
+        return __('roles.list_description');
     }
 
     /**
@@ -57,8 +58,10 @@ class RoleEditScreen extends Screen
      */
     public function permission(): ?iterable
     {
+        // 'platform.systems.roles' matches nothing in the shared legacy
+        // permissions table, so the legacy panel gate is used instead.
         return [
-            'platform.systems.roles',
+            'access_admin_panel',
         ];
     }
 
@@ -92,54 +95,70 @@ class RoleEditScreen extends Screen
             Layout::block([
                 RoleEditLayout::class,
             ])
-                ->title('Role')
-                ->description('Defines a set of privileges that grant users access to various services and allow them to perform specific tasks or operations.'),
+                ->title(__('roles.form_title'))
+                ->description(__('roles.form_description')),
 
-            Layout::block([
-                RolePermissionLayout::class,
-            ])
-                ->title('Permission/Privilege')
-                ->description('A privilege is necessary to perform certain tasks and operations in an area.'),
+            Layout::block(Layout::rows([
+                Label::make('rolePermissionsLabel')
+                    ->title(__('roles.permissions_title'))
+                    ->value($this->rolePermissionsText()),
+            ]))
+                ->title(__('roles.permissions_title'))
+                ->description(__('roles.permissions_description')),
         ];
     }
 
+    private function rolePermissionsText(): string
+    {
+        if ($this->role instanceof Role && $this->role->exists) {
+            $names = $this->role->permissionNames()->all();
+
+            return $names !== [] ? implode(', ', $names) : __('roles.no_permissions');
+        }
+
+        return __('roles.no_permissions');
+    }
+
     /**
+     * Only name + guard_name are writable: the legacy table has no
+     * slug/permissions columns and its grants are owned by the legacy app.
+     *
      * @return RedirectResponse
      */
     public function save(Request $request, Role $role)
     {
-        $request->validate([
-            'role.name' => 'required',
-            'role.slug' => [
-                'required',
-                Rule::unique(Role::class, 'slug')->ignore($role),
+        $data = $request->validate([
+            'role.name' => [
+                'required', 'string', 'max:255',
+                Rule::unique('roles', 'name')->ignore($role->getKey()),
             ],
-        ]);
+            'role.guard_name' => 'required|string|max:255',
+        ])['role'];
 
-        $role->fill($request->get('role'));
+        try {
+            $role->fill($data)->save();
+        } catch (\Throwable $e) {
+            report($e);
+            Toast::error(__('roles.save_failed'));
 
-        $role->permissions = collect($request->get('permissions'))
-            ->map(fn ($value, $key) => [base64_decode($key) => $value])
-            ->collapse()
-            ->toArray();
+            return redirect()->back();
+        }
 
-        $role->save();
-
-        Toast::info(__('Role was saved'));
+        Toast::info(__('roles.saved'));
 
         return redirect()->route('platform.systems.roles');
     }
 
     /**
-     * @throws \Exception
-     *
      * @return RedirectResponse
+     *
+     * @throws \Exception
      */
     public function remove(Role $role)
     {
         $role->delete();
 
-        Toast::info(__('Role was removed'));
+        Toast::info(__('roles.removed'));
 
         return redirect()->route('platform.systems.roles');
     }

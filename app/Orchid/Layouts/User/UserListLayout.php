@@ -46,6 +46,16 @@ class UserListLayout extends Table
                         'user' => $user->id,
                     ])),
 
+            TD::make('role', __('users.role_marker'))
+                ->render(fn (User $user): string => e((string) ($user->role ?? '—'))),
+
+            TD::make('roles', __('users.roles'))
+                ->render(fn (User $user): string => e($user->roles->pluck('name')->implode(', ') ?: __('users.no_roles'))),
+
+            TD::make('workplaces_count', __('users.workplace'))
+                ->align(TD::ALIGN_CENTER)
+                ->render(fn (User $user): int => (int) ($user->workplaces_count ?? 0)),
+
             TD::make('created_at', __('Created'))
                 ->usingComponent(DateTimeSplit::class)
                 ->align(TD::ALIGN_RIGHT)

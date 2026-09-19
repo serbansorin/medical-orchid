@@ -22,17 +22,19 @@ class RoleEditLayout extends Rows
                 ->type('text')
                 ->max(255)
                 ->required()
-                ->title(__('Name'))
-                ->placeholder(__('Name'))
-                ->help(__('Role display name')),
+                ->title(__('roles.name'))
+                ->placeholder(__('roles.name'))
+                ->help(__('roles.form_description')),
 
-            Input::make('role.slug')
+            // Legacy `roles` has no slug/permissions columns: the bridged
+            // model exposes name as slug, and grants live in
+            // role_has_permissions (owned by the legacy app, read-only here).
+            Input::make('role.guard_name')
                 ->type('text')
                 ->max(255)
                 ->required()
-                ->title(__('Slug'))
-                ->placeholder(__('Slug'))
-                ->help(__('Actual name in the system')),
+                ->title(__('roles.guard'))
+                ->placeholder('web'),
         ];
     }
 }

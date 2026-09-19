@@ -4,27 +4,25 @@ declare(strict_types=1);
 
 namespace App\Orchid\Filters;
 
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Builder;
 use Orchid\Filters\Filter;
-use Orchid\Platform\Models\Role;
 use Orchid\Screen\Fields\Select;
 
 class RoleFilter extends Filter
 {
     /**
      * The displayable name of the filter.
-     *
-     * @return string
      */
     public function name(): string
     {
-        return __('Roles');
+        // NB: plain __('Roles') would load the whole lang `roles` group as
+        // an array on case-insensitive filesystems — always use a grouped key.
+        return __('users.roles');
     }
 
     /**
      * The array of matched parameters.
-     *
-     * @return array
      */
     public function parameters(): array
     {
@@ -34,14 +32,13 @@ class RoleFilter extends Filter
     /**
      * Apply to a given Eloquent query builder.
      *
-     * @param Builder $builder
-     *
-     * @return Builder
+     * Legacy `roles` table is keyed by `name` (no `slug` column), so the
+     * filter matches the role id carried in the request.
      */
     public function run(Builder $builder): Builder
     {
         return $builder->whereHas('roles', function (Builder $query) {
-            $query->where('slug', $this->request->get('role'));
+            $query->where('roles.id', $this->request->get('role'));
         });
     }
 
@@ -52,10 +49,10 @@ class RoleFilter extends Filter
     {
         return [
             Select::make('role')
-                ->fromModel(Role::class, 'name', 'slug')
+                ->fromModel(Role::class, 'name', 'id')
                 ->empty()
                 ->value($this->request->get('role'))
-                ->title(__('Roles')),
+                ->title(__('users.roles')),
         ];
     }
 
@@ -64,6 +61,6 @@ class RoleFilter extends Filter
      */
     public function value(): string
     {
-        return $this->name().': '.Role::where('slug', $this->request->get('role'))->first()->name;
+        return $this->name().': '.(Role::whereKey($this->request->get('role'))->first()?->name ?? '');
     }
 }

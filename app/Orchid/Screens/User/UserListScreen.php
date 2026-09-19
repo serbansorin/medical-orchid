@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Orchid\Screens\User;
 
+use App\Models\User;
+use App\Models\UserWorkplace;
 use App\Orchid\Layouts\User\UserEditLayout;
 use App\Orchid\Layouts\User\UserFiltersLayout;
 use App\Orchid\Layouts\User\UserListLayout;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use App\Models\User;
 use Orchid\Screen\Action;
 use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Screen;
@@ -26,10 +27,17 @@ class UserListScreen extends Screen
     public function query(): iterable
     {
         return [
+            // workplaces_count via subquery: User has no workplaces() relation
+            // (models are read-only this step) and user_workplaces is shared legacy.
             'users' => User::with('roles')
+                ->select('users.*')
+                ->selectSub(
+                    UserWorkplace::selectRaw('count(*)')->whereColumn('user_id', 'users.id'),
+                    'workplaces_count'
+                )
                 ->filters(UserFiltersLayout::class)
                 ->defaultSort('id', 'desc')
-                ->paginate(),
+                ->paginate(25),
         ];
     }
 
@@ -38,7 +46,7 @@ class UserListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'User Management';
+        return __('users.list_title');
     }
 
     /**
@@ -46,13 +54,15 @@ class UserListScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'A comprehensive list of all registered users, including their profiles and privileges.';
+        return __('users.list_description');
     }
 
     public function permission(): ?iterable
     {
+        // 'platform.systems.users' matches nothing in the shared legacy
+        // permissions table, so the legacy panel gate is used instead.
         return [
-            'platform.systems.users',
+            'access_admin_panel',
         ];
     }
 
