@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'list_title' => 'Diagnostice pacienți',
+    'list_description' => 'Cazuri diagnostice cu afecțiuni și programări legate.',
+    'create_title' => 'Diagnostic nou',
+    'edit_title' => 'Editează diagnosticul',
+    'patient' => 'Pacient',
+    'doctor' => 'Medic',
+    'main_doctor' => 'Medic principal',
+    'appointment' => 'Programare',
+    'title' => 'Titlu',
+    'chief_complaint' => 'Acuza principală',
+    'status' => 'Status',
+    'status_active' => 'Activ',
+    'status_completed' => 'Completat',
+    'status_referred' => 'Referit',
+    'status_cancelled' => 'Anulat',
+    'start_date' => 'Data începerii',
+    'end_date' => 'Data încheierii',
+    'notes' => 'Observații',
+    'conditions' => 'Afecțiuni (ICD)',
+    'appointments' => 'Programări legate',
+    'conditions_count' => 'Afecțiuni',
+    'saved' => 'Diagnosticul a fost salvat.',
+    'search_title' => 'Caută după titlu',
+    'search_patient' => 'Caută după pacient',
+];

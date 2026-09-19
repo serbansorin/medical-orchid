@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'list_title' => 'Patient diagnostics',
+    'list_description' => 'Diagnostic workups with linked conditions and appointments.',
+    'create_title' => 'New diagnostic',
+    'edit_title' => 'Edit diagnostic',
+    'patient' => 'Patient',
+    'doctor' => 'Doctor',
+    'main_doctor' => 'Main doctor',
+    'appointment' => 'Appointment',
+    'title' => 'Title',
+    'chief_complaint' => 'Chief complaint',
+    'status' => 'Status',
+    'status_active' => 'Active',
+    'status_completed' => 'Completed',
+    'status_referred' => 'Referred',
+    'status_cancelled' => 'Cancelled',
+    'start_date' => 'Start date',
+    'end_date' => 'End date',
+    'notes' => 'Notes',
+    'conditions' => 'Conditions (ICD)',
+    'appointments' => 'Linked appointments',
+    'conditions_count' => 'Conditions',
+    'saved' => 'Diagnostic saved.',
+    'search_title' => 'Search by title',
+    'search_patient' => 'Search by patient',
+];
